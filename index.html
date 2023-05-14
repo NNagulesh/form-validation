@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form id="form">
+        <h1><img src="\Kumaraguru_College_of_Technology_logo.png" height="150" width="150"> <br>ADMISSION REGISTER</h1>
+        <div class="input-data">
+            <label for="username"> Student name</label>
+            <input type="text" id="username" name="username"/>
+            <div class="error"> </div>
+        </div>
+        <div class="input-data">
+            <label for="dob">Date of birth</label>
+            <input type="date" id="dob" name="dob" min="1990-01-01" max="2007-01-01"/>
+            <div class="error"></div>
+        </div>
+        <div class="input-data">
+            <label for="rollno">12th Roll number</label>
+            <input type="number" id="rollno" name="rollno"/>
+            <div class="error"></div>
+        </div>
+     
+        <div class="input-data">
+            <label for="marks">Marks obtained in 12th board exam </label>
+            <input type="number" id="marks" name="marks" max="600" />
+            <div class="error"></div>
+        </div>
+      
+        <div class="input-data">
+            <label for="cut"> cutoff marks</label>
+            <input type="number" id="cut" name="cut" min="150" max="200"/>
+            <div class="error"></div>
+        </div>
+        <div class="input-data">
+            <label for="dept">Select your department</label>
+            <select id="dept" name="dept" value="">
+                <option></option>
+            <option value="CSE">CSE</option>
+            <option value="CSE">IT</option>
+            <option value="CSE">ECE</option>
+            <option value="CSE">MECH</option>
+            </select>
+            <div class="error"></div>
+        </div>
+        <div class="input-data">
+            <label for="phone">Phone number</label>
+            <input type="number" id="phone" name="phone" min="1111111111" max="9999999999"/>
+            <div class="error"></div>
+        </div>
+        <div class="input-data">
+            <label for="email">Email id</label>
+            <input type="email" id="email" name="email"/>
+            <div class="error"></div>
+        </div>
+
+        <div class="input-data">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password"/>
+            <div class="error"></div>
+        </div>
+        <div class="input-data">
+            <label for="cpassword">Confirm Password</label>
+            <input type="password" id="cpassword" name="cpassword"/>
+            <div class="error"></div>
+        </div>
+       
+        <button >SUBMIT</button>
+
+    </form>
+    <script src="form.js"></script>
+</body>
+</html>
