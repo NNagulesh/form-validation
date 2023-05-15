@@ -50,12 +50,3 @@ select{
     padding:5px;
 
 }
-
-.input-data.error input{
-
-    border-color:rgb(213, 26, 26);
-}
-.input-data.Success input{
-
-    border-color:rgb(3, 239, 3);
-}
