@@ -11,7 +11,7 @@ const pin=document.querySelector('#password')
 const cpin=document.querySelector('#cpassword')
 
 bt.addEventListener('click',async(e)=>{
-    if(!validateInputs())
+    if(!validateInputs()===true)
     {      
         e.preventDefault();
     }else{
