@@ -11,7 +11,8 @@ const pin=document.querySelector('#password')
 const cpin=document.querySelector('#cpassword')
 
 bt.addEventListener('click',async(e)=>{
-    if(!validateInputs()===true)
+   
+    if(!validateInputs())
     {      
         e.preventDefault();
     }else{
@@ -109,12 +110,25 @@ function validateInputs(){
         success = false;
         setError(pin,'Password must be atleast 8 characters long')
     }
-    else if(!validateEmail(passwordVal)){
-        success = false;
-        setError(pin,'use capital,small letter,special character,number to make pin strong')
+    else if(passwordVal.search(/[!@#$%^&*]/)< 0){
+        success=false;
+        setError(pin,"Password must contains atleast one special character")
+    }
+    else if(passwordVal.search(/[0-9]/) < 0){
+        success=false;
+        setError(pin,"Password must contains atleast one digits")
+    }
+    else if(passwordVal.search(/[a-z]/) < 0){
+        success=false;
+        setError(pin,"Password must contains atleast one small case")
+    }
+    else if(passwordVal.search(/[A-Z]/) < 0){
+        success=false;
+        setError(pin,"Password must contains atleast one capital case")
     }
     else{
         setSuccess(pin)
+        
     }
     if(cpasswordVal === ''){
         success = false;
@@ -141,11 +155,3 @@ function setSuccess(element){
     const errorElement = inputGroup.querySelector('.error')
     errorElement.innerText = '';
 }
-const validateEmail = (passwordVal) => {
-    return String(passwordVal)
-      .toLowerCase()
-      .toUpperCase()
-      .match(
-        /^[a-zA-Z0-9!@#$%^&*]{8,16}$/
-      );
-  };
